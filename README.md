@@ -1,3 +1,6 @@
-The OpenShift `jbossews` cartridge documentation can be found at:
+## Magnolia CMS on Tomcat 7 Running on OpenShift##
 
-https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-jbossews/README.md
+To get Magnolia CMS 5.0.4 running on OpenShift run the command shown below.
+```
+rhc create-app magnoliacms tomcat-7 --from-code https://github.com/shekhargulati/mg-5.0.4-tomcat7-openshift.git
+```
