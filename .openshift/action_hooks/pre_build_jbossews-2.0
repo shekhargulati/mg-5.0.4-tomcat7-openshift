@@ -1,0 +1,17 @@
+#!/bin/bash
+# The logic to start up your application should be put in this
+# script. The application will work only if it binds to
+# $OPENSHIFT_INTERNAL_IP:8080
+set -X
+
+cd $OPENSHIFT_DATA_DIR
+
+if [ -f $OPENSHIFT_DATA_DIR/activemq-data ]
+then
+    cp ROOT.war $OPENSHIFT_REPO_DIR/webapps
+    exit 0
+else
+	wget http://downloads.sourceforge.net/project/magnolia/magnolia/Magnolia%20CE%205.0.4/magnolia-bundled-webapp-5.0.4.war
+	mv magnolia-bundled-webapp-5.0.4.war ROOT.war 
+	cp ROOT.war $OPENSHIFT_REPO_DIR/webapps
+fi
